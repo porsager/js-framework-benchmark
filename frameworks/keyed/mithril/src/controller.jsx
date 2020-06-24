@@ -24,7 +24,7 @@ var Row = {
             <td class="col-md-4">
                 <a onclick={this.click}>{vnode.attrs.label}</a>
             </td>
-            <td class="col-md-1"><a onclick={this.delete}><span className="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+            <td class="col-md-1"><a onclick={this.delete} className="remove"><span className="remove glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
             <td class="col-md-6"></td>
         </tr>);
     }
