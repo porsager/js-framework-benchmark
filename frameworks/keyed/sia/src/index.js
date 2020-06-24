@@ -1,4 +1,4 @@
-import s from '/node_modules/sia/browser/sin.js'
+import s from '../node_modules/sia/browser/sia.js'
 
 const { state, actions } = Model()
 
@@ -23,7 +23,6 @@ const button = s(({ id, onclick, label }) =>
 
 const row = s(({ id, label, selected }) =>
   s`tr`({
-    key: id,
     class: state.selected === id && 'danger'
   },
     s`td.col-md-1`(
@@ -31,7 +30,7 @@ const row = s(({ id, label, selected }) =>
     ),
     s`td.col-md-4`(
       s`a.lbl`({
-        onclick: () => console.log(actions.select(id), 'select', id)
+        onclick: () => actions.select(id)
       }, label)
     ),
     s`td.col-md-1`(
@@ -65,7 +64,7 @@ s.mount(document.getElementById('main'), () =>
       s`tbody`({
         id: 'tbody'
       },
-        state.data.map(row)
+        state.data.map(x => row({ key: x.id, ...x }))
       )
     )
   )

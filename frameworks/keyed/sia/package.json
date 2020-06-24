@@ -7,8 +7,8 @@
     "frameworkVersion": "0.0.1"
   },
   "scripts": {
-    "build-dev": "webpack -w -d",
-    "build-prod": "webpack -p"
+    "build-dev": "rollup -c -w",
+    "build-prod": "rollup -c"
   },
   "author": "Rasmus Porsager <rasmus@porsager.com>",
   "license": "Apache-2.0",
@@ -16,5 +16,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/krausest/js-framework-benchmark.git"
+  },
+  "devDependencies": {
+    "rollup": "2.18.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-terser": "6.1.0"
   }
 }

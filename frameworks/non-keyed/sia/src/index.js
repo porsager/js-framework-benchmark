@@ -1,4 +1,4 @@
-import s from '/node_modules/sia/browser/sin.js'
+import s from '../node_modules/sia/browser/sia.js'
 
 const { state, actions } = Model()
 
@@ -23,7 +23,7 @@ const button = s(({ id, onclick, label }) =>
 
 const row = s(({ id, label, selected }) =>
   s`tr`({
-    className: state.selected === id && 'danger'
+    class: state.selected === id && 'danger'
   },
     s`td.col-md-1`(
       id
